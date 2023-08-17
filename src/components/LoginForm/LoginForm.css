@@ -1,0 +1,68 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  row-gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.outer-label {
+  position: relative;
+  width: 100%;
+}
+
+
+.input-field {
+  background-color: #213b50;
+  border-radius: 0.5rem;
+  color: var(--text-white);
+  width: 100%;
+  padding: 12px;
+  border-bottom: 3px solid #455059;
+}
+
+.input-field:focus {
+  border: 2px solid rgb(31, 80, 148);
+  outline: none;
+}
+
+.input-field-name {
+  font-size: 0.875rem;
+  color: var(--text-white);
+  margin-bottom: 0.25rem;
+  line-height: 1.375rem;
+}
+
+.input-field-name sup {
+  color: rgba(255, 0, 0, 0.85);
+}
+
+.password-visibility-login {
+  position: absolute;
+  right: 0.75rem;
+  top:  55%;;
+  transform: translateY(-50%);
+}
+
+.password-icon {
+  cursor: pointer;
+  font-size: 20px;
+  fill: #afb2bf;
+}
+
+.forgot-password {
+  font-size: smaller;
+  color: cadetblue;
+  text-align: end;
+}
+
+.sign-in-btn {
+  margin-top: 1.25rem;
+  width: 100%;
+  background: yellow;
+  border-radius: 8px;
+  font-size: medium;
+  font-weight: medium;
+  padding: 8px 12px;
+  font-weight: 700;
+}

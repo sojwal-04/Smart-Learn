@@ -1,7 +1,8 @@
+import "./Dashboard.css"
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className="dashboard-container">
       Welcome to the dashboard
     </div>
   )

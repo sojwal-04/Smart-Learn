@@ -7,8 +7,8 @@ const SignUp = ({setIsLoggedIn}) => {
   return (
     <Template
       title="Join Smart Learn Today!"
-      desc1="Ignite Your Learning Journey"
-      desc2="Discover and Learn with Smart Learn. Explore diverse courses and grow personally and professionally."
+      desc1="Ignite Your Learning Journey."
+      desc2="Discover and Learn with SmartLearn."
       image={signUpImg}
       formType="signup"
       setIsLoggedIn={setIsLoggedIn}

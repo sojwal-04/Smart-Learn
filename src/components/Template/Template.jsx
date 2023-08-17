@@ -1,18 +1,23 @@
+import "./Template.css"
+
 import LoginForm from "../LoginForm/LoginForm"
 import SignUpForm from "../SignUpForm/SignUpForm"
+import {FcGoogle} from 'react-icons/fc'
 
 const Template = ({ title, desc1, desc2, image, formType, setIsLoggedIn }) => {
-  return (
-    <div className="template-container">
 
-      <div className="left">
-        <h1>{title}</h1>
-        <p>
+  return (
+    <div className="template-container ">
+
+      <div className="left-container">
+        <h1 className="title">{title}</h1>
+        <p className="desc">
           <span>{desc1}</span>
+          <br />
           <span>{desc2}</span>
         </p>
 
-
+        {/* Form */}
         {
           formType === "signup"
             ?
@@ -20,21 +25,23 @@ const Template = ({ title, desc1, desc2, image, formType, setIsLoggedIn }) => {
             : <LoginForm setIsLoggedIn={setIsLoggedIn} />
         }
 
-        <div>
-          <div></div>
+        <div className="horizontal">
+          <div className="line"></div>
           <p>OR</p>
-          <div></div>
+          <div className="line"></div>
         </div>
 
-        <button>
+        <button className="sign-btn">
+          <FcGoogle/>
           <p>Sign Up With Google</p>
         </button>
       </div>
 
-      <div className="right">
+      <div className="right-container">
         <img src={image} className="image" loading="lazy" />
-        <div className="background"></div>
+        {/* <div className="background"></div> */}
       </div>
+
     </div>
   )
 }

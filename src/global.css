@@ -1,0 +1,8 @@
+:root {
+  --bg-color: #0b253c;
+  --bg-nav: linear-gradient(180deg, #081c2f64, #133759);
+
+  --bg-btn: linear-gradient(180deg, #0b253c 0%, #081c2f64 66%, #133759 100%);
+
+  --text-white: rgb(202, 192, 192);
+}

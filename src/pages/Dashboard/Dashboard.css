@@ -1,0 +1,9 @@
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-white);
+  min-height: 100%;
+  font-size: 1.875rem/* 30px */;
+  line-height: 2.25rem/* 36px */;
+}

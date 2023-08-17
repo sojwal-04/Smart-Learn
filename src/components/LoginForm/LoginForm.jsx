@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 import { Link, useNavigate } from "react-router-dom";
 
-const LoginForm = ({setIsLoggedIn}) => {
+const LoginForm = ({ setIsLoggedIn }) => {
 
   const navigate = useNavigate();
 
@@ -24,15 +24,19 @@ const LoginForm = ({setIsLoggedIn}) => {
     })
   };
 
-  const handleSubmit = (e) =>{
+  const handleSubmit = (e) => {
     e.preventDefault();
+
     setIsLoggedIn(true);
     toast.success("Logged In");
     navigate("/dashboard");
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      className="login-form"
+    >
       <label className="outer-label">
         <p className="input-field-name">
           Email Address <sup>*</sup>
@@ -61,26 +65,26 @@ const LoginForm = ({setIsLoggedIn}) => {
           placeholder="Enter your password"
         />
         <span
-          className="password-visibility"
+          className="password-visibility-login"
           onClick={() => setShowPassword(!showPassword)}
         >
           {
             showPassword
               ?
-              <AiOutlineEyeInvisible />
+              <AiOutlineEyeInvisible  className="password-icon"/>
               :
-              <AiOutlineEye />
+              <AiOutlineEye className="password-icon" />
           }
         </span>
 
         <Link to="#">
-          <p>
+          <p className="forgot-password">
             Forgot Password
           </p>
         </Link>
       </label>
 
-      <button>
+      <button className="sign-in-btn">
         Sign In
       </button>
 

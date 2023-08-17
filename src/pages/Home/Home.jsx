@@ -1,7 +1,11 @@
+import "./Home.css"
 
-const Home = () => {
+
+const Home = ({isLoggedIn}) => {
   return (
-    <div>Home</div>
+    <div className="home-container">
+      Home
+    </div>
   )
 }
 

@@ -23,7 +23,7 @@ const Navbar = (props) => {
       </Link>
 
       <nav className="nav-links">
-        <ul className="link-items">
+        <ul className="link-items gap-x-4">
           <li className="link">
             <Link to="/">Home</Link>
           </li>

@@ -5,9 +5,15 @@ import toast from "react-hot-toast";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 
-const SignUpForm = ({setIsLoggedIn}) => {
+const SignUpForm = ({ setIsLoggedIn }) => {
 
   const navigate = useNavigate();
+
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+
+  const [accountType, setAccountType] = useState('student');
 
   const [inputs, setInputs] = useState(
     {
@@ -19,8 +25,6 @@ const SignUpForm = ({setIsLoggedIn}) => {
     }
   );
 
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handleChange = (e) => {
     setInputs((prev) => (
@@ -30,27 +34,34 @@ const SignUpForm = ({setIsLoggedIn}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(inputs.password !== inputs.confirmPassword){
+    if (inputs.password !== inputs.confirmPassword) {
       toast.error("Passwords do not match");
       return;
-    }
-    setIsLoggedIn(true);
-    toast.success("Account Created");
-    const user ={...inputs};
-    console.log("printing user");
-    console.log(user);
 
+    }
+    const updatedInputs = { ...inputs, accountType: accountType };
+    setInputs(updatedInputs);
+
+    setIsLoggedIn(true);
+
+    toast.success("Account Created");
+    // console.log("printing user");
+    // console.log(updatedInputs);
     navigate("/dashboard")
   }
 
   return (
     <div>
 
-      <div>
-        <button className="">
+      <div className="student-instructor-buttons">
+        <button
+          className={`${accountType === 'student' ? "type-btn-click" : "type-btn"}`}
+          onClick={() => setAccountType("student")}>
           Student
         </button>
-        <button>
+        <button
+          className={`${accountType === 'instructor' ? "type-btn-click" : "type-btn"}`}
+          onClick={() => setAccountType("instructor")}>
           Instructor
         </button>
       </div>
@@ -129,9 +140,9 @@ const SignUpForm = ({setIsLoggedIn}) => {
               {
                 showPassword
                   ?
-                  <AiOutlineEyeInvisible />
+                  <AiOutlineEyeInvisible className="password-visibility-icon" />
                   :
-                  <AiOutlineEye />
+                  <AiOutlineEye className="password-visibility-icon" />
               }
             </span>
 
@@ -157,20 +168,21 @@ const SignUpForm = ({setIsLoggedIn}) => {
               {
                 showConfirmPassword
                   ?
-                  <AiOutlineEyeInvisible />
+                  <AiOutlineEyeInvisible className="password-visibility-icon" />
                   :
-                  <AiOutlineEye />
+                  <AiOutlineEye className="password-visibility-icon" />
               }
             </span>
 
           </label>
         </div>
 
-        <button>
+        <button className="create-account">
           Create Account
         </button>
 
       </form>
+
     </div>
   )
 }
