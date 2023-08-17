@@ -1,0 +1,25 @@
+
+.left {
+
+}
+
+
+.right {
+
+  position: relative;
+}
+
+
+
+
+.image {
+  width: 550px;
+  height: 504px;
+}
+
+.background {
+  position: absolute;
+  width: 550px;
+  height: 504px;
+  background-color: blue;
+}
